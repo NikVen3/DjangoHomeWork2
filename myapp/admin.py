@@ -7,7 +7,7 @@ def reset_quantity(modeladmin, request, queryset):
     queryset.update(amount=0)
 
 
-@admin.register(models.Product)    # admin.site.register(Author) используем декоратор для каждой медели класса
+@admin.register(models.Product)    # admin.site.register(Author) используем декоратор для каждой мoдели класса
 class ProductAdmin(admin.ModelAdmin):
     list_display = ['name', 'price', 'amount']
     ordering = ['-amount']
@@ -29,20 +29,20 @@ class ProductAdmin(admin.ModelAdmin):
             {
                 'classes': ['collapse'],  # схлопнутое поле(скрытое)
                 'description': 'Категория товара и его подробное описание',  # при развороте выдает описание
-                'fields': ['category', 'description'],  # те поля которые мы спрятали
+                'fields': [ 'description'],  # те поля которые мы спрятали
             },
         ),
         (
             'Бухгалтерия',
             {
-                'fields': ['price', 'quantity'],
+                'fields': ['price'],
             }
         ),
         (
             'Рейтинг и прочее',
             {
                 'description': 'Рейтинг сформирован автоматически на основе оценок покупателей',
-                'fields': ['rating', 'date_added'],
+                'fields': [],
             }
         ),
     ]
