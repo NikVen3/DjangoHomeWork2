@@ -17,14 +17,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from myproject.myapp.views import upload_image
+# from myproject.myapp.views import upload_image
 
-# from myapp.views import upload_image
+# from myproject.myapp.views import upload_image
+
+from myapp.views import upload_image
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-     path('', include('myapp.urls')),
-    # #path('__debug__/', include("debug_toolbar.urls")),
-    #  path('upload/', upload_image, name='upload_image'),
+    path('', include('myapp.urls')),
+     #path('__debug__/', include("debug_toolbar.urls")),
+     path('upload/', upload_image, name='upload_image'),
 ]

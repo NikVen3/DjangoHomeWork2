@@ -10,4 +10,4 @@ class ProductForm(forms.Form):
 
 
 class ImageForm(forms.Form):
-    image=forms.ImageField()
+    image = forms.ImageField()
